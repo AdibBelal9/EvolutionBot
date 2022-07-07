@@ -4,6 +4,8 @@ import pybullet as p
 
 passphysicsClient = p.connect(p.GUI)
 
+p.loadSDF("box.sdf")
+
 for i in range(1000):
     p.stepSimulation()
     print(i)
@@ -11,3 +13,4 @@ for i in range(1000):
 
 
 p.disconnect()
+# testing 
