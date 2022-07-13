@@ -14,7 +14,7 @@ planeId = p.loadURDF("plane.urdf")
 robotId = p.loadURDF("body.urdf")
 
 
-p.loadSDF("world.sdf")
+# p.loadSDF("world.sdf")
 
 for i in range(1000):
     p.stepSimulation()
