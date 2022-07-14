@@ -1,4 +1,5 @@
 import numpy 
 
-AB = numpy.load("Store.npy", mmap_mode=None, allow_pickle=False, fix_imports=True, encoding='ASCII')
+AB = numpy.load("data/Store.npy", mmap_mode=None, allow_pickle=False, fix_imports=False, encoding='ASCII')
 print(AB)
+
