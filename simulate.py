@@ -3,7 +3,7 @@ import time
 import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
-
+import numpy 
 
 passphysicsClient = p.connect(p.GUI)
 
@@ -18,13 +18,16 @@ robotId = p.loadURDF("body.urdf")
 
 pyrosim.Prepare_To_Simulate(robotId)
 
+backLegSensorValues = numpy.zeros(10000)
 
-for i in range(1000):
+for i in range(100):
     p.stepSimulation()
-    backLegTouch = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-    print(backLegTouch)
+    backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
+    print(backLegSensorValues[i])
     time.sleep(0.05)
+    # print(i)
 
+print(backLegSensorValues)
 
 p.disconnect()
 # testing 
