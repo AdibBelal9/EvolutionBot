@@ -1,5 +1,7 @@
+from dataclasses import dataclass
 from time import time
 import time
+import numpy
 import pybullet as p
 import pybullet_data
 import pyrosim.pyrosim as pyrosim
@@ -26,8 +28,9 @@ for i in range(1000):
     print(backLegSensorValues[i])
     time.sleep(0.05)
     # print(i)
+    numpy.save("data/Store.npy", backLegSensorValues, allow_pickle=True, fix_imports=True)
 
-print(backLegSensorValues)
+
+# print(backLegSensorValues)
 
 p.disconnect()
-# testing 
